@@ -11,7 +11,7 @@ RUN a2enmod rewrite
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy Laravel project files into container
+# Copy project files
 COPY . .
 
 # Install Composer
@@ -20,17 +20,15 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Set proper permissions
+# Set permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
-# Change Apache document root to public/
+# Change Apache document root to /public
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
-
-RUN php artisan migrate --force && php artisan db:seed --force
 
 # Expose HTTP port
 EXPOSE 80
 
-# Start Apache
-CMD ["apache2-foreground"]
+# Start Laravel migrations and Apache when the container starts
+CMD php artisan migrate --force && php artisan db:seed --force && apache2-foreground
