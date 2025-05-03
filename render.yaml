@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hotel-room-reservation
+    runtime: docker
+    region: oregon
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: database/database.sqlite
