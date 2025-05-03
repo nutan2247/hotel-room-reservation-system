@@ -18,12 +18,12 @@ A Laravel 10-based Hotel Room Reservation System built as part of an SDE 3 asses
 - 🧾 Booking form with guest name input
 
 ---
-
+<!-- 
 ## 📷 Screenshots
 
 > Add screenshots here if you want (optional)
 
----
+--- -->
 
 ## ⚙️ Tech Stack
 
@@ -57,12 +57,12 @@ A Laravel 10-based Hotel Room Reservation System built as part of an SDE 3 asses
 
 ---
 
-## 🌐 Live Demo
+<!-- ## 🌐 Live Demo
 
 [Click here to view the live app](https://your-live-url.com)  
 _(Replace with your Render or ngrok link)_
 
----
+--- -->
 
 ## 📁 Folder Structure
 
@@ -85,4 +85,4 @@ _(Replace with your Render or ngrok link)_
 ## 📧 Contact
 
 Built with ❤️ by [Nutan Kumar](https://github.com/nutan2247)  
-For queries: nutankumar.dev [at] gmail [dot] com (replace accordingly)
+For queries: nutan2247.developer@gmail.com
