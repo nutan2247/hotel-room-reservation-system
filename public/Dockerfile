@@ -31,6 +31,6 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 EXPOSE 80
 
 # Start Laravel migrations and Apache when the container starts
-CMD php artisan migrate:fresh --seed && apache2-foreground
+CMD php artisan migrate:fresh --seed --force && apache2-foreground
 
 
