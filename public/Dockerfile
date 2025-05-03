@@ -27,6 +27,8 @@ RUN chown -R www-data:www-data /var/www/html \
 # Change Apache document root to public/
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
+RUN php artisan migrate --force && php artisan db:seed --force
+
 # Expose HTTP port
 EXPOSE 80
 
