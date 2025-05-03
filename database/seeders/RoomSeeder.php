@@ -11,8 +11,10 @@ class RoomSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    
     public function run(): void
     {
+        Room::truncate();
         // Floors 1 to 9 (10 rooms each)
         for ($floor = 1; $floor <= 9; $floor++) {
             for ($i = 1; $i <= 10; $i++) {
@@ -33,4 +35,5 @@ class RoomSeeder extends Seeder
             ]);
         }
     }
+    
 }
